@@ -18,7 +18,7 @@ function Comienza(){
 var opciones={frequency:2000};
 
 watchID=navigator.accelerometer.watchAcceleration(Correcto,Error,Opciones);
-navigator.geolocation.getCurrentPosition(Localiza,ErrorLocalización);
+navigator.geolocation.getCurrentPosition(Localiza,ErrorLocalizacion);
 }
 //Detiene la observacion de la aceleracion
 
@@ -33,7 +33,7 @@ function Correcto(acceleration){
 	var element=document.getElementById('acelerometro');
 	
 element.innerHTML='Aceleracion en X:'+acceleration.x+'<br/>'+
-'Aceleration en Y:'+acceleration.y+'<br/>'+
+'Aceleracion en Y:'+acceleration.y+'<br/>'+
 'intervalo:'+acceleration.timestamp+'<br/>';
 }
 
@@ -43,7 +43,7 @@ alert('Error!');
 }
 //Exito al localizar
 function Localiza(posicion){
-var element=document.getElementById('geolocalizacion')
+var element=document.getElementById('geolocalizacion');
 element.innerHTML='Latitud:'+posicion.coords.latitude+'<br/>'+
 'Longitud:'+posicion.coords.longitude+'<br/>'+
 'Precision:'+posicion.coords.accuracy+'<br/>'+
